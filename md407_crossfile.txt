@@ -1,0 +1,19 @@
+[binaries]
+c = ['clang', '--target=arm-none-eabi']
+ar = 'llvm-ar'
+strip = 'llvm-strip'
+ld='ld.lld'
+
+[host_machine]
+system = 'none'
+cpu_family = 'arm'
+cpu = 'cortex-m4'
+endian = 'little'
+
+[built-in options]
+c_args = ['-march=armv6-m', '-mcpu=cortex-m4', '-mthumb']
+c_link_args = ['-fuse-ld=lld', '-Wl,--symbol-ordering-file=@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407.order', '-T', '@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407-ram.ld', '-nodefaultlibs']
+
+[properties]
+startup = 'src/md407startup.S'
+objcopy = 'llvm-objcopy'
