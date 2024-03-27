@@ -16,4 +16,3 @@ c_link_args = ['-fuse-ld=lld', '-Wl,--symbol-ordering-file=@GLOBAL_SOURCE_ROOT@'
 
 [properties]
 startup = 'src/md407startup.S'
-objcopy = 'llvm-objcopy'
