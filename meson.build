@@ -1,4 +1,7 @@
-project('embeddedtest', 'c', meson_version: '>=1.3.0')
+project('embeddedtest', 'c',
+	meson_version: '>=1.3.0',
+	default_options: ['c_std=c2x'])
+
 startup = meson.get_external_property('startup')
 src = ['src/main.c', startup]
 e = executable('embeddedtest', src)
