@@ -1,8 +1,8 @@
 [binaries]
-c = ['clang', '--target=arm-none-eabi']
+c = ['clang', '--target=arm-none-eabi', '-march=armv6-m', '-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mthumb']
 ar = 'llvm-ar'
 strip = 'llvm-strip'
-ld='ld.lld'
+c_ld='lld'
 
 [host_machine]
 system = 'none'
@@ -11,8 +11,8 @@ cpu = 'cortex-m4'
 endian = 'little'
 
 [built-in options]
-c_args = ['-march=armv6-m', '-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mthumb']
-c_link_args = ['-fuse-ld=lld', '-Wl,--symbol-ordering-file=@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407.order', '-T', '@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407-ram.ld', '-nodefaultlibs']
+c_link_args = ['-T', '@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407' / 'ram.ld', '-nodefaultlibs']
 
 [properties]
-startup = 'src/md407startup.S'
+platform_src = [ 'src/md407/startup.S' ]
+input_bfdname = 'elf32-little'
