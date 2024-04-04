@@ -11,8 +11,8 @@ cpu = 'cortex-m4'
 endian = 'little'
 
 [built-in options]
-c_link_args = ['-T', '@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407' / 'ram.ld', '-nodefaultlibs']
+c_link_args = ['-T', '@GLOBAL_SOURCE_ROOT@' / 'ld' / 'md407.ld', '-nodefaultlibs']
 
 [properties]
-platform_src = [ 'src/md407/startup.S', 'src/md407/copyvec.S' ]
+board = 'md407'
 input_bfdname = 'elf32-little'

@@ -2,10 +2,7 @@ project('embeddedtest', 'c',
 	meson_version: '>=1.3.0',
 	default_options: ['c_std=c23'])
 
-platform_src = meson.get_external_property('platform_src')
-
-src = [ platform_src, 'src/main.c' ]
-e = executable('embeddedtest', src)
+subdir('src')
 
 prog_objcopy = find_program('objcopy')
 input_bfdname = meson.get_external_property('input_bfdname')
