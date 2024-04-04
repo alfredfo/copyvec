@@ -1,6 +1,6 @@
-	.globl _start
-	.section .start_section, "ax", %progbits
+    .globl _start
+    .section .start_section, "ax", %progbits
 _start:
-	ldr r0,=stack_top
+    ldr r0,=stack_top
     bl main
-	b _start
+    b _start
