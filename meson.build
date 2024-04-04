@@ -1,6 +1,6 @@
 project('embeddedtest', 'c',
 	meson_version: '>=1.3.0',
-	default_options: ['c_std=c2x'])
+	default_options: ['c_std=c23'])
 
 platform_src = meson.get_external_property('platform_src')
 
