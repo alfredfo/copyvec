@@ -1,1 +1,1 @@
-src += files('startup.S')
+common_src += files('startup.S')
