@@ -14,5 +14,5 @@ endian = 'little'
 c_link_args = ['-T', '@GLOBAL_SOURCE_ROOT@' / 'src' / 'md407' / 'ram.ld', '-nodefaultlibs']
 
 [properties]
-platform_src = [ 'src/md407/startup.S' ]
+platform_src = [ 'src/md407/startup.S', 'src/md407/copyvec.S' ]
 input_bfdname = 'elf32-little'

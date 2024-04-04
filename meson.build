@@ -4,7 +4,7 @@ project('embeddedtest', 'c',
 
 platform_src = meson.get_external_property('platform_src')
 
-src = [ platform_src ]
+src = [ platform_src, 'src/main.c' ]
 e = executable('embeddedtest', src)
 
 prog_objcopy = find_program('objcopy')
